@@ -15,7 +15,7 @@ def load_image(image_path):
 def image_compression(image_np, n_colors):
     # reshape image to 2D array of pixels
     width, height, depth = image_np.shape
-    image_reshaped = image_np.reshape(image_np, (width * height, depth))
+    image_reshaped = image_np.reshape((width * height, depth))
     
     # apply KMeans clustering to the reshaped image
     kmeans = KMeans(n_clusters=n_colors, random_state=0)
@@ -49,8 +49,8 @@ def save_result(original_image_np, quantized_image_np, output_path):
 
 def __main__():
     # Load and process the image
-    image_path = 'CS506_LAB2/frog.png' 
-    output_path = 'CS506_LAB2/output.png'  
+    image_path = '~/CS506_LAB2/frog.png' 
+    output_path = '~/Desktop/output.png'  
     image_np = load_image(image_path)
 
     # Perform image quantization using KMeans

@@ -49,12 +49,12 @@ def save_result(original_image_np, quantized_image_np, output_path):
 
 def __main__():
     # Load and process the image
-    image_path = 'favorite_image.png'  
-    output_path = 'compressed_image.png'  
+    image_path = 'CS506_LAB2/frog.png' 
+    output_path = 'CS506_LAB2/output.png'  
     image_np = load_image(image_path)
 
     # Perform image quantization using KMeans
-    n_colors = 8  # Number of colors to reduce the image to, you may change this to experiment
+    n_colors = 5  # Number of colors to reduce the image to, you may change this to experiment
     quantized_image_np = image_compression(image_np, n_colors)
 
     # Save the original and quantized images side by side
